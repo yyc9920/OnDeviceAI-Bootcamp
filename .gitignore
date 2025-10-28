@@ -5,10 +5,13 @@ bin/
 external/
 lib/*
 inc/*
-data/*
+data/MNIST
+data/MNIST/*
 backup/*
 models/*
 .vscode
 .env
 .venv/
 *copy*
+prepare_dataset.sh
+processed/*
