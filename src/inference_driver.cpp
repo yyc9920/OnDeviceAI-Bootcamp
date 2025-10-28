@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
 
     
     // ====================================
-    }
+    
 
     /* Allocate Tensors */
     // ======= Write your code here =======
