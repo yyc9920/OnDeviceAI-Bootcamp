@@ -1,34 +1,15 @@
-"""
-* Filename: train.py
-*
-* @Author: Namcheol Lee
-* @Affiliation: Real-Time Operating System Laboratory, Seoul National University
-* @Created: 10/06/25
-* @Modified by: Namcheol Lee, Taehyun Kim on 10/16/25
-* @Contact: nclee@redwood.snu.ac.kr
-*
-* @Description: Trains a SimpleDNN and exports it into a .onnx file
-*
-"""
-
-# Import os to create directories
 import os
-
-# Import warnings to ignore DeprecationWarning
 import warnings
+
+import ssl
+ssl._create_default_https_context = ssl._create_stdlib_context
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Import PyTorch, nn, and, optim
 import torch
 import torch.nn as nn
 import torch.optim as optim
-
-# Import the model
 from model import SimpleClassifier
-
-
-# Download MNIST dataset from torchvision
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
@@ -99,6 +80,5 @@ torch.onnx.export(
     input_names=["input"],
     output_names=["output"],
 )
-
 
 print("Successfully saved simple_classifier.onnx in ./models")
